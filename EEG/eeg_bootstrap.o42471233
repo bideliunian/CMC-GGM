@@ -1,0 +1,106 @@
+ 
+ 
+Job started on comp-bc-0366.acib.production.int.aci.ics.psu.edu at Wed Apr  5 23:25:27 EDT 2023
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Warning messages:
+1: The packages `ellipsis` (>= 0.3.2) and `vctrs` (>= 0.3.8) are required as of rlang 1.0.0. 
+2: replacing previous import 'lifecycle::last_warnings' by 'rlang::last_warnings' when loading 'tibble' 
+3: replacing previous import 'ellipsis::check_dots_unnamed' by 'rlang::check_dots_unnamed' when loading 'tibble' 
+4: replacing previous import 'ellipsis::check_dots_used' by 'rlang::check_dots_used' when loading 'tibble' 
+5: replacing previous import 'ellipsis::check_dots_empty' by 'rlang::check_dots_empty' when loading 'tibble' 
+6: replacing previous import 'lifecycle::last_warnings' by 'rlang::last_warnings' when loading 'pillar' 
+7: replacing previous import 'ellipsis::check_dots_unnamed' by 'rlang::check_dots_unnamed' when loading 'pillar' 
+8: replacing previous import 'ellipsis::check_dots_used' by 'rlang::check_dots_used' when loading 'pillar' 
+9: replacing previous import 'ellipsis::check_dots_empty' by 'rlang::check_dots_empty' when loading 'pillar' 
+
+Attaching package: 'pracma'
+
+The following object is masked from 'package:pdist':
+
+    pdist
+
+Loading required package: foreach
+Loading required package: iterators
+Loading required package: parallel
+Loading required package: rngWELL
+This is randtoolbox. For an overview, type 'help("randtoolbox")'.
+Loading required package: MASS
+
+Attaching package: 'MASS'
+
+The following object is masked from 'package:dplyr':
+
+    select
+
+        /storage/home/qjz5064/work/CMC-GGM/Functions//BIC.R
+value   ?                                                  
+visible FALSE                                              
+        /storage/home/qjz5064/work/CMC-GGM/Functions//CV4tuning.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions//MultiNetwork.R
+value   ?                                                           
+visible FALSE                                                       
+        /storage/home/qjz5064/work/CMC-GGM/Functions//admm.R
+value   ?                                                   
+visible FALSE                                               
+        /storage/home/qjz5064/work/CMC-GGM/Functions//auc.R
+value   ?                                                  
+visible FALSE                                              
+        /storage/home/qjz5064/work/CMC-GGM/Functions//corr_thresholding.R
+value   ?                                                                
+visible FALSE                                                            
+        /storage/home/qjz5064/work/CMC-GGM/Functions//evaluation.R
+value   ?                                                         
+visible FALSE                                                     
+        /storage/home/qjz5064/work/CMC-GGM/Functions//generate_data.R
+value   ?                                                            
+visible FALSE                                                        
+        /storage/home/qjz5064/work/CMC-GGM/Functions//grp_lasso.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions//helper.R
+value   ?                                                     
+visible FALSE                                                 
+        /storage/home/qjz5064/work/CMC-GGM/Functions//helper_fct.R
+value   ?                                                         
+visible FALSE                                                     
+        /storage/home/qjz5064/work/CMC-GGM/Functions//helper_nbd_glasso.R
+value   ?                                                                
+visible FALSE                                                            
+        /storage/home/qjz5064/work/CMC-GGM/Functions//hub_cncted_model.R
+value   ?                                                               
+visible FALSE                                                           
+        /storage/home/qjz5064/work/CMC-GGM/Functions//kfoldCV.R
+value   ?                                                      
+visible FALSE                                                  
+        /storage/home/qjz5064/work/CMC-GGM/Functions//lambda_sup.R
+value   ?                                                         
+visible FALSE                                                     
+        /storage/home/qjz5064/work/CMC-GGM/Functions//nb_lasso_admm.R
+value   ?                                                            
+visible FALSE                                                        
+        /storage/home/qjz5064/work/CMC-GGM/Functions//ns_lasso.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions//ns_thres.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions//trans.R
+value   ?                                                    
+visible FALSE                                                
+ elapsed 
+2236.998 
+pcmc-alc sparsity: 0.0649801587301587 ;cmc-alc sparsity: 0.0307539682539683 ;copula-alc sparsity: 0.0823412698412698pcmc-ctr sparsity: 0.110119047619048 ;cmc-ctr sparsity: 0.00793650793650794 ;copula-ctr sparsity: 0.162202380952381 
+Job Ended at Thu Apr  6 00:07:33 EDT 2023
+ 

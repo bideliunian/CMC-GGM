@@ -1,0 +1,201 @@
+ 
+ 
+Job started on comp-bc-0291.acib.production.int.aci.ics.psu.edu at Sun Apr  9 18:08:02 EDT 2023
+
+Attaching package: 'pracma'
+
+The following object is masked from 'package:pdist':
+
+    pdist
+
+
+Attaching package: 'igraph'
+
+The following objects are masked from 'package:stats':
+
+    decompose, spectrum
+
+The following object is masked from 'package:base':
+
+    union
+
+Loading required package: foreach
+Loading required package: iterators
+Loading required package: parallel
+Loading required package: rngWELL
+This is randtoolbox. For an overview, type 'help("randtoolbox")'.
+Loading required package: MASS
+        /storage/home/qjz5064/work/CMC-GGM/Functions/BIC.R
+value   ?                                                 
+visible FALSE                                             
+        /storage/home/qjz5064/work/CMC-GGM/Functions/CV4tuning.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions/MultiNetwork.R
+value   ?                                                          
+visible FALSE                                                      
+        /storage/home/qjz5064/work/CMC-GGM/Functions/admm.R
+value   ?                                                  
+visible FALSE                                              
+        /storage/home/qjz5064/work/CMC-GGM/Functions/auc.R
+value   ?                                                 
+visible FALSE                                             
+        /storage/home/qjz5064/work/CMC-GGM/Functions/corr_thresholding.R
+value   ?                                                               
+visible FALSE                                                           
+        /storage/home/qjz5064/work/CMC-GGM/Functions/evaluation.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/generate_data.R
+value   ?                                                           
+visible FALSE                                                       
+        /storage/home/qjz5064/work/CMC-GGM/Functions/grp_lasso.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper.R
+value   ?                                                    
+visible FALSE                                                
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper_fct.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper_nbd_glasso.R
+value   ?                                                               
+visible FALSE                                                           
+        /storage/home/qjz5064/work/CMC-GGM/Functions/hub_cncted_model.R
+value   ?                                                              
+visible FALSE                                                          
+        /storage/home/qjz5064/work/CMC-GGM/Functions/kfoldCV.R
+value   ?                                                     
+visible FALSE                                                 
+        /storage/home/qjz5064/work/CMC-GGM/Functions/lambda_sup.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/nb_lasso_admm.R
+value   ?                                                           
+visible FALSE                                                       
+        /storage/home/qjz5064/work/CMC-GGM/Functions/ns_lasso.R
+value   ?                                                      
+visible FALSE                                                  
+        /storage/home/qjz5064/work/CMC-GGM/Functions/ns_thres.R
+value   ?                                                      
+visible FALSE                                                  
+        /storage/home/qjz5064/work/CMC-GGM/Functions/trans.R
+value   ?                                                   
+visible FALSE                                               
+        /storage/home/qjz5064/work/CMC-GGM/Functions/BIC.R
+value   ?                                                 
+visible FALSE                                             
+        /storage/home/qjz5064/work/CMC-GGM/Functions/CV4tuning.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions/MultiNetwork.R
+value   ?                                                          
+visible FALSE                                                      
+        /storage/home/qjz5064/work/CMC-GGM/Functions/admm.R
+value   ?                                                  
+visible FALSE                                              
+        /storage/home/qjz5064/work/CMC-GGM/Functions/auc.R
+value   ?                                                 
+visible FALSE                                             
+        /storage/home/qjz5064/work/CMC-GGM/Functions/corr_thresholding.R
+value   ?                                                               
+visible FALSE                                                           
+        /storage/home/qjz5064/work/CMC-GGM/Functions/evaluation.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/generate_data.R
+value   ?                                                           
+visible FALSE                                                       
+        /storage/home/qjz5064/work/CMC-GGM/Functions/grp_lasso.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper.R
+value   ?                                                    
+visible FALSE                                                
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper_fct.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper_nbd_glasso.R
+value   ?                                                               
+visible FALSE                                                           
+        /storage/home/qjz5064/work/CMC-GGM/Functions/hub_cncted_model.R
+value   ?                                                              
+visible FALSE                                                          
+        /storage/home/qjz5064/work/CMC-GGM/Functions/kfoldCV.R
+value   ?                                                     
+visible FALSE                                                 
+        /storage/home/qjz5064/work/CMC-GGM/Functions/lambda_sup.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/nb_lasso_admm.R
+value   ?                                                           
+visible FALSE                                                       
+        /storage/home/qjz5064/work/CMC-GGM/Functions/ns_lasso.R
+value   ?                                                      
+visible FALSE                                                  
+        /storage/home/qjz5064/work/CMC-GGM/Functions/ns_thres.R
+value   ?                                                      
+visible FALSE                                                  
+        /storage/home/qjz5064/work/CMC-GGM/Functions/trans.R
+value   ?                                                   
+visible FALSE                                               
+        /storage/home/qjz5064/work/CMC-GGM/Functions/BIC.R
+value   ?                                                 
+visible FALSE                                             
+        /storage/home/qjz5064/work/CMC-GGM/Functions/CV4tuning.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions/MultiNetwork.R
+value   ?                                                          
+visible FALSE                                                      
+        /storage/home/qjz5064/work/CMC-GGM/Functions/admm.R
+value   ?                                                  
+visible FALSE                                              
+        /storage/home/qjz5064/work/CMC-GGM/Functions/auc.R
+value   ?                                                 
+visible FALSE                                             
+        /storage/home/qjz5064/work/CMC-GGM/Functions/corr_thresholding.R
+value   ?                                                               
+visible FALSE                                                           
+        /storage/home/qjz5064/work/CMC-GGM/Functions/evaluation.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/generate_data.R
+value   ?                                                           
+visible FALSE                                                       
+        /storage/home/qjz5064/work/CMC-GGM/Functions/grp_lasso.R
+value   ?                                                       
+visible FALSE                                                   
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper.R
+value   ?                                                    
+visible FALSE                                                
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper_fct.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/helper_nbd_glasso.R
+value   ?                                                               
+visible FALSE                                                           
+        /storage/home/qjz5064/work/CMC-GGM/Functions/hub_cncted_model.R
+value   ?                                                              
+visible FALSE                                                          
+        /storage/home/qjz5064/work/CMC-GGM/Functions/kfoldCV.R
+value   ?                                                     
+visible FALSE                                                 
+        /storage/home/qjz5064/work/CMC-GGM/Functions/lambda_sup.R
+value   ?                                                        
+visible FALSE                                                    
+        /storage/home/qjz5064/work/CMC-GGM/Functions/nb_lasso_admm.R
+value   ?                                                           
+visible FALSE                                                       
+        /storage/home/qjz5064/work/CMC-GGM/Functions/ns_lasso.R
+value   ?                                                      
+visible FALSE                                                  
+        /storage/home/qjz5064/work/CMC-GGM/Functions/ns_thres.R
+value   ?                                                      
+visible FALSE                                                  
+        /storage/home/qjz5064/work/CMC-GGM/Functions/trans.R
+value   ?                                                   
+visible FALSE                                               
+ 
+Job Ended at Sun Apr  9 18:25:00 EDT 2023
+ 

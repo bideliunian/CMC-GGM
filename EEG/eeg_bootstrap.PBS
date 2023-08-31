@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=3:00:00
+#PBS -l pmem=1gb
+#PBS -l feature=rhel7
+#PBS -A open
+#PBS -N eeg_bootstrap
+#PBS -j oe
+
+echo " "
+echo " "
+echo "Job started on `hostname` at `date`"
+
+cd $PBS_O_WORKDIR
+
+Rscript eeg_bootstrap.R $args
+
+echo " "
+echo "Job Ended at `date`"
+echo " "

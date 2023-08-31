@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=4
+#PBS -l walltime=10:00:00
+#PBS -l pmem=8gb
+#PBS -l feature=rhel7
+#PBS -A open
+#PBS -N exp_d06
+#PBS -j oe
+
+echo " "
+echo " "
+echo "Job started on `hostname` at `date`"
+
+cd $PBS_O_WORKDIR
+python model1_exp_d06.py 
+
+echo " "
+echo "Job Ended at `date`"
+echo " "

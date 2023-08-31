@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=10
+#PBS -l walltime=5:00:00
+#PBS -l pmem=4gb
+#PBS -l feature=rhel7
+#PBS -A open
+#PBS -N a_proj_all
+#PBS -j oe
+
+echo " "
+echo " "
+echo "Job started on `hostname` at `date`"
+
+cd $PBS_O_WORKDIR
+
+Rscript model_a_all.R $args
+
+echo " "
+echo "Job Ended at `date`"
+echo " "
