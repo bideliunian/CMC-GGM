@@ -22,7 +22,7 @@ graph.est <- function(S, n, p, sparsity = NULL){
   registerDoParallel(cl)
   
   result <- foreach(l = 1:L, .combine="c", .packages=c("matrixcalc","igraph","BB")) %dopar% {
-    func.path <- "D:/Research/VcopularGGM/Codes/Functions"
+    func.path <- "/Users/qiz/CMC-GGM/Functions"
     source(paste(func.path,"ns_lasso.R", sep="/"))
     bglasso.list <- bglasso(S = S, lambda = lambda[l], n = n, p = p,
                             tol.Theta=tol.Theta, tol.beta=tol.beta,

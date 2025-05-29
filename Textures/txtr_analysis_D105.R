@@ -14,10 +14,10 @@ library(RColorBrewer)
 library(reshape2)
 library(dplyr)
 
-function.path <- "~/work/CMC-GGM/Functions"
-working.path <- "~/work/CMC-GGM/Textures"
-save.path <- "~/work/CMC-GGM/Textures"
-reading.path <- "~/work/CMC-GGM/Textures/Colored Brodatz"
+function.path <- "/Users/qiz/CMC-GGM/Functions"
+working.path <- "/Users/qiz/CMC-GGM/Textures"
+save.path <- "/Users/qiz/CMC-GGM/Textures"
+reading.path <- "/Users/qiz/CMC-GGM/Textures/CVResult"
 
 # source all function scipts from the function path
 function.sources <- list.files(function.path, 
@@ -85,9 +85,9 @@ S.linear = cor(linear.score)
 
 ################## PART 2: Graph Estimation ########################
 
-est.cmc.glasso <- graph.est(S=S.cmc, n=n, p=p)
-est.copula.glasso <- graph.est(S=S.copula+10^-3*diag(M*p), n=n, p=p)
-est.linear.glasso <- graph.est(S=S.linear, n=n, p=p)
+est.cmc.glasso <- graph.est(S=S.cmc, n=n, p=p, sparsity=0.2)
+est.copula.glasso <- graph.est(S=S.copula+10^-3*diag(M*p), n=n, p=p, sparsity=0.2)
+est.linear.glasso <- graph.est(S=S.linear, n=n, p=p, sparsity=0.2)
 
 Theta.cmc <- est.cmc.glasso$Theta
 Theta.copula <- est.copula.glasso$Theta
@@ -113,11 +113,11 @@ p.copula <- network.plotting(edge.copula, cols)
 p.linear <- network.plotting(edge.linear, cols)
 
 #load(paste(working.path, "/0311D105.RData", sep = ""))
-png(paste("~/work/CMC-GGM/Textures/graphmap_D105_cmc.png"), width = 360, height = 300)
+png(paste("/Users/qiz/CMC-GGM/Textures/graphmap_D105_cmc.png"), width = 360, height = 300)
 p.cmc
 dev.off()
 
-png(paste("~/work/CMC-GGM/Textures/graphmap_D105_linear.png"), width = 360, height = 300)
+png(paste("/Users/qiz/CMC-GGM/Textures/graphmap_D105_linear.png"), width = 360, height = 300)
 p.linear
 dev.off()
 
