@@ -95,12 +95,12 @@ for(mod.alp in mod.list){
     df.comb <- rbind(df.comb,df2)
     
     ####### choosing plotting methods #############
-    df.comb.select <- df.comb[df.comb$methods %in% c("bglasso", "or"),]
+    df.comb.select <- df.comb[df.comb$methods %in% c("bglasso", "and"),]
     
     plot <- ggplot(df.comb.select, aes(x=FP, y=TP)) +
     geom_line(aes(color=trans.methods, linetype=methods))+ xlab("FPR") + ylab("TPR") + 
       theme_bw() +       scale_linetype_manual(values=c(1,2,3)) +
-      scale_linetype_discrete(labels=c('group-glasso', 'nbd-group-lasso-or')) 
+      scale_linetype_discrete(labels=c('group-glasso', 'nbd-group-lasso')) 
     
     plot.list[[index]] = plot
     index = index + 1
