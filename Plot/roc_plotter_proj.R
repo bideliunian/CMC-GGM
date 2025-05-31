@@ -1,13 +1,14 @@
 library(ggplot2)
 library(gridExtra)
 library(dplyr)
+library(ggpubr)
 
 d.list <- c(3, 5, 7)
 trans.list <- c("copula","cmc","pcmc")
 model.list <- c('power', 'exp')
 est.list <- c('group-glasso', 'thresholding', 'nbd-group-lasso')
 ## aggregated dataframe the beginning and ending
-df2 = expand.grid(trans.methods = trans.list, est.methods = est.list,
+df2 = expand.grid(models = trans.list, methods = est.list,
                   TP = c(0,1), FP = c(0,1))
 df2 = df2[df2$TP == df2$FP,]
 
@@ -55,8 +56,8 @@ for(model.alp in model.list){
     
     array <- c(1:50)
     
-    working.path <- "~/work/CMC-GGM/Model_a_proj"
-    save.path <- "~/work/CMC-GGM/Model_a_proj/Results"
+    working.path <- "/Users/qiz/CMC-GGM/Model_a_proj"
+    save.path <- "/Users/qiz/CMC-GGM/Model_a_proj/Results"
     
     n.par <- length(array)
     
@@ -67,53 +68,58 @@ for(model.alp in model.list){
     for(i in 1:n.par){
       load(paste(save.path,"/ROC_a_d",dee,"_", model.alp, ".seed",i,".Rdata",sep=""))
       
-      y.copula.g <- y.copula.g + interp(df[df$trans.methods=='copula'&df$methods=='group-glasso',3], 
-                                        df[df$trans.methods=='copula'&df$methods=='group-glasso',4], x.list) / n.par
-      y.cmc.g <- y.cmc.g + interp(df[df$trans.methods=='cmc'&df$methods=='group-glasso',3], 
-                                  df[df$trans.methods=='cmc'&df$methods=='group-glasso',4], x.list) / n.par
-      y.pcmc.g <- y.pcmc.g + interp(df[df$trans.methods=='pcmc'&df$methods=='group-glasso',3], 
-                                    df[df$trans.methods=='pcmc'&df$methods=='group-glasso',4], x.list) / n.par
-      y.copula.t <- y.copula.t + interp(df[df$trans.methods=='copula'&df$methods=='thresholding',3], 
-                                        df[df$trans.methods=='copula'&df$methods=='thresholding',4], x.list) / n.par
-      y.cmc.t <- y.cmc.t + interp(df[df$trans.methods=='cmc'&df$methods=='thresholding',3], 
-                                  df[df$trans.methods=='cmc'&df$methods=='thresholding',4], x.list) / n.par
-      y.pcmc.t <- y.pcmc.t + interp(df[df$trans.methods=='pcmc'&df$methods=='thresholding',3], 
-                                    df[df$trans.methods=='pcmc'&df$methods=='thresholding',4], x.list) / n.par
-      y.cmc.nb <- y.cmc.nb + interp(df[df$trans.methods=='cmc'&df$methods=='nbd-group-lasso',3], 
-                                     df[df$trans.methods=='cmc'&df$methods=='nbd-group-lasso',4], x.list) / n.par
-      y.copula.nb <- y.copula.nb + interp(df[df$trans.methods=='copula'&df$methods=='nbd-group-lasso',3], 
-                                           df[df$trans.methods=='copula'&df$methods=='nbd-group-lasso',4], x.list) / n.par
-      y.pcmc.nb <- y.pcmc.nb + interp(df[df$trans.methods=='pcmc'&df$methods=='nbd-group-lasso',3], 
-                                   df[df$trans.methods=='pcmc'&df$methods=='nbd-group-lasso',4], x.list) / n.par
+      # Rename column if it exists
+      if("trans.methods" %in% names(df)) {
+        names(df)[names(df) == "trans.methods"] <- "models"
+      }
+      
+      y.copula.g <- y.copula.g + interp(df[df$models=='copula'&df$methods=='group-glasso',3], 
+                                        df[df$models=='copula'&df$methods=='group-glasso',4], x.list) / n.par
+      y.cmc.g <- y.cmc.g + interp(df[df$models=='cmc'&df$methods=='group-glasso',3], 
+                                  df[df$models=='cmc'&df$methods=='group-glasso',4], x.list) / n.par
+      y.pcmc.g <- y.pcmc.g + interp(df[df$models=='pcmc'&df$methods=='group-glasso',3], 
+                                    df[df$models=='pcmc'&df$methods=='group-glasso',4], x.list) / n.par
+      y.copula.t <- y.copula.t + interp(df[df$models=='copula'&df$methods=='thresholding',3], 
+                                        df[df$models=='copula'&df$methods=='thresholding',4], x.list) / n.par
+      y.cmc.t <- y.cmc.t + interp(df[df$models=='cmc'&df$methods=='thresholding',3], 
+                                  df[df$models=='cmc'&df$methods=='thresholding',4], x.list) / n.par
+      y.pcmc.t <- y.pcmc.t + interp(df[df$models=='pcmc'&df$methods=='thresholding',3], 
+                                    df[df$models=='pcmc'&df$methods=='thresholding',4], x.list) / n.par
+      y.cmc.nb <- y.cmc.nb + interp(df[df$models=='cmc'&df$methods=='nbd-group-lasso',3], 
+                                     df[df$models=='cmc'&df$methods=='nbd-group-lasso',4], x.list) / n.par
+      y.copula.nb <- y.copula.nb + interp(df[df$models=='copula'&df$methods=='nbd-group-lasso',3], 
+                                           df[df$models=='copula'&df$methods=='nbd-group-lasso',4], x.list) / n.par
+      y.pcmc.nb <- y.pcmc.nb + interp(df[df$models=='pcmc'&df$methods=='nbd-group-lasso',3], 
+                                   df[df$models=='pcmc'&df$methods=='nbd-group-lasso',4], x.list) / n.par
     }
    
-    df.comb = data.frame(trans.methods = rep(rep(trans.list, each=length(x.list)), 3),
-                         est.methods = rep(c('group-glasso', 'nbd-group-lasso', 'thresholding'), each=3*length(x.list)),
+    df.comb = data.frame(models = rep(rep(trans.list, each=length(x.list)), 3),
+                         methods = rep(c('group-glasso', 'nbd-group-lasso', 'thresholding'), each=3*length(x.list)),
                        TP = c(y.copula.g, y.cmc.g, y.pcmc.g, y.copula.nb, y.cmc.nb, y.pcmc.nb,
                               y.copula.t, y.cmc.t, y.pcmc.t),
                        FP = rep(x.list,9))
     df.comb <- rbind(df.comb,df2)
     
-    df.comb.select <- df.comb[df.comb$est.methods %in% c('group-glasso', 'nbd-group-lasso'),]
+    df.comb.select <- df.comb[df.comb$methods %in% c('group-glasso', 'nbd-group-lasso'),]
     plot <- ggplot(df.comb.select, aes(x=FP, y=TP)) +
-    geom_line(aes(color=trans.methods, linetype=est.methods))+ xlab("FPR") + ylab("TPR") + 
+    geom_line(aes(color=models, linetype=methods))+ xlab("FPR") + ylab("TPR") + 
       theme_bw() + 
-      scale_linetype_manual(values=c(2,1)) +
-      scale_color_manual(values=c("#F8766D", "#00BA38", "#7570B3"))
-      #scale_linetype_discrete(labels=c('group-glasso', 'nbd-group-lasso'))
+      scale_color_manual(labels=c('cmc-ggm', 'copula-ggm', 'pcmc-ggm'),
+                         values=c("#F8766D","#00BA38", "#9370DB")) +
+      scale_linetype_manual(labels=c('group-glasso', 'nbd-group-lasso'),
+                           values=c("dashed", "solid"))
     plot.list[[index]] = plot
     index = index + 1
   }
 }
 
   
-pdf("~/work/CMC-GGM/Plot/roc_proj.pdf")
+pdf("/Users/qiz/CMC-GGM/Plot/roc_proj_updated.pdf")
 do.call("ggarrange", c(plot.list, ncol = 3, nrow = 3, common.legend = TRUE, legend="bottom"))   
 dev.off()
 
-pdf("~/work/CMC-GGM/Plot/roc_proj_slides.pdf")
-do.call("ggarrange", c(list(plot.list[[4]], plot.list[[5]], 
-                            plot.list[[7]], plot.list[[8]]),
-                       ncol = 2, nrow = 2, font.label = list(size = 16, color = "black"),
-                       common.legend = TRUE, legend="bottom"))   
-dev.off()
+# pdf("/Users/qiz/CMC-GGM/Plot/roc_proj_slides.pdf")
+# do.call("ggarrange", c(list(plot.list[[4]], plot.list[[5]], 
+#                             plot.list[[7]], plot.list[[8]]),
+#                        ncol = 2, nrow = 2, font.label = list(size = 16, color = "black"),
+#                        common.legend = TRUE, legend="bottom"))   
